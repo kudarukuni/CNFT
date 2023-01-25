@@ -3,36 +3,36 @@ import CandyMachine from "../components/CandyMachine";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
+// Constants
 const TWITTER_HANDLE = "Naswillow";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const Home = () => {
-  const wallet = useWallet();
-  const renderNotConnectedContainer = () => (
-    <div>
-      <img src="https://media.giphy.com/media/h5NLPVn3rg0Rq/giphy.gif" alt="emoji" />
-      <div className="button-container">
-        <WalletMultiButton className="cta-button connect-wallet-button" />
-      </div>
-    </div>
-  );
+    const renderNotConnectedContainer = () => (
+        <div>
+            <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
 
-  return (
-    <div className="App">
-      <div className="container">
-        <div className="header-container">
-          <p className="header">🍭 Goritoto Drop</p>
-          <p className="sub-text">The official Goritoto NFT Metaplex Candy Machine with fair mint</p>
-          {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
+            <div className="button-container">
+                <WalletMultiButton className="cta-button connect-wallet-button" />
+            </div>
         </div>
+    );
 
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
-          <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`Designed and Developed By ${TWITTER_HANDLE}`}</a>
+    return (
+        <div className="App">
+            <div className="container">
+                <div className="header-container">
+                    <p className="header">🍭 Candy Drop</p>
+                    <p className="sub-text">NFT drop machine with fair mint</p>
+                    {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
+                </div>
+                <div className="footer-container">
+                    <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
+                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`built by @${TWITTER_HANDLE}`}</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Home;
