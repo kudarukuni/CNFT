@@ -9,14 +9,13 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const Home = () => {
     const renderNotConnectedContainer = () => (
-        <div>
-            <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
-
-            <div className="button-container">
-                <WalletMultiButton className="cta-button connect-wallet-button" />
-            </div>
-        </div>
-    );
+    <div>
+      <img src="https://media.giphy.com/media/h5NLPVn3rg0Rq/giphy.gif" alt="emoji" />
+      <div className="button-container">
+        <WalletMultiButton className="cta-button connect-wallet-button" />
+      </div>
+    </div>
+  );
 
     return (
         <div className="App">

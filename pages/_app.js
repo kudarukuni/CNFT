@@ -19,14 +19,13 @@ const App = ({ Component, pageProps }) => {
     const TWITTER_HANDLE = "Naswillow";
     const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
     const renderNotConnectedContainer = () => (
-        <div>
-            <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
-
-            <div className="button-container">
-                <WalletMultiButton className="cta-button connect-wallet-button" />
-            </div>
-        </div>
-    );
+    <div>
+      <img src="https://media.giphy.com/media/h5NLPVn3rg0Rq/giphy.gif" alt="emoji" />
+      <div className="button-container">
+        <WalletMultiButton className="cta-button connect-wallet-button" />
+      </div>
+    </div>
+  );
     const network = WalletAdapterNetwork.Devnet;
     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
     const wallets = useMemo(() => [new PhantomWalletAdapter(), new SolflareWalletAdapter(), new TorusWalletAdapter()], [network]);
