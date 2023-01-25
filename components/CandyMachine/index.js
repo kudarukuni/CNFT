@@ -4,7 +4,7 @@ import { Program, AnchorProvider, web3 } from "@project-serum/anchor";
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from "@solana/spl-token";
 import { sendTransactions } from "./connection";
 import { candyMachineProgram, TOKEN_METADATA_PROGRAM_ID, SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID, getAtaForMint, getNetworkExpire, getNetworkToken, CIVIC, } from "./helpers";
-import CountdownTimer from '/CountdownTimer';
+import CountdownTimer from '../CountdownTimer';
 
 const { SystemProgram } = web3;
 const opts = {
