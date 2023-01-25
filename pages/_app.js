@@ -16,6 +16,8 @@ import "../styles/CandyMachine.css";
 import "@solana/wallet-adapter-react-ui/styles.css";
 
 const App = ({ Component, pageProps }) => {
+    const TWITTER_HANDLE = "Naswillow";
+    const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
     const renderNotConnectedContainer = () => (
         <div>
             <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
