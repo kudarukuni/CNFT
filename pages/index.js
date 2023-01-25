@@ -22,8 +22,8 @@ const Home = () => {
         <div className="App">
             <div className="container">
                 <div className="header-container">
-                    <p className="header">🍭 Candy Drop</p>
-                    <p className="sub-text">NFT drop machine with fair mint</p>
+                    <p className="header">Goritoto Drop</p>
+                    <p className="sub-text">The oficial Goritoto NFT Metaplex candy machine with fair mint</p>
                     {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
                 </div>
                 <div className="footer-container">

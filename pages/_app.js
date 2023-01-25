@@ -35,7 +35,7 @@ const App = ({ Component, pageProps }) => {
     <div className="App">
         <div className="container">
             <div className="header-container">
-                <p className="header">🍭 Candy Drop</p>
+                <p className="header">Goritoto Drop</p>
                 <p className="sub-text">NFT drop machine with fair mint</p>
                 {/* Render your connect to wallet button right here */}
                 {wallets.publicKey ? <CandyMachine walletAddress={wallets} /> : renderNotConnectedContainer()}
