@@ -3,12 +3,12 @@ import CandyMachine from "../components/CandyMachine";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
-// Constants
 const TWITTER_HANDLE = "Naswillow";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const Home = () => {
-    const renderNotConnectedContainer = () => (
+  const wallet = useWallet();
+  const renderNotConnectedContainer = () => (
     <div>
       <img src="https://media.giphy.com/media/h5NLPVn3rg0Rq/giphy.gif" alt="emoji" />
       <div className="button-container">
@@ -17,21 +17,22 @@ const Home = () => {
     </div>
   );
 
-    return (
-        <div className="App">
-            <div className="container">
-                <div className="header-container">
-                    <p className="header">Goritoto Drop</p>
-                    <p className="sub-text">The oficial Goritoto NFT Metaplex candy machine with fair mint</p>
-                    {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
-                </div>
-                <div className="footer-container">
-                    <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
-                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`built by @${TWITTER_HANDLE}`}</a>
-                </div>
-            </div>
+  return (
+    <div className="App">
+      <div className="container">
+        <div className="header-container">
+          <p className="header">Goritoto Drop</p>
+          <p className="sub-text">The official Goritoto NFT Metaplex Candy Machine with fair mint</p>
+          {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
         </div>
-    );
+
+        <div className="footer-container">
+          <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
+          <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`Designed and Developed By ${TWITTER_HANDLE}`}</a>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
