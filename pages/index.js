@@ -1,7 +1,12 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import CandyMachine from "../components/CandyMachine";
 import { useWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+
+const WalletMultiButtonDynamic = dynamic(
+  async () => (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
+  { ssr: false }
+);
 
 const TWITTER_HANDLE = "Naswillow";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
@@ -12,7 +17,7 @@ const Home = () => {
     <div>
       <img src="https://media.giphy.com/media/h5NLPVn3rg0Rq/giphy.gif" alt="emoji" />
       <div className="button-container">
-        <WalletMultiButton className="cta-button connect-wallet-button" />
+        <WalletMultiButtonDynamic className="cta-button connect-wallet-button" />
       </div>
     </div>
   );
