@@ -26,7 +26,7 @@ const Home = () => {
         <div className="App">
             <div className="container">
                 <div className="header-container">
-                    <p className="header"> Scary Drop 🍭</p>
+                    <p className="header">👻 Scary Drop 👻</p>
                     <p className="sub-text">A Spooky Chipoko NFT Airdrop With Fair Mint</p>
                     {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
                 </div>
