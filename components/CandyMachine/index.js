@@ -50,16 +50,15 @@ const CandyMachine = ({ walletAddress }) => {
 
   const mintToken = async () => {
     const mint = web3.Keypair.generate();
-    const userTokenAccountAddress = await getAssociatedTokenAddress(mint.publicKey, walletAddress.publicKey);
+    const userTokenAccountAddress = await getAtaForMint(mint.publicKey, walletAddress.publicKey))[0];
 
     const userPayingAccountAddress = candyMachine.state.tokenMint
-      ? await getAssociatedTokenAddress(candyMachine.state.tokenMint, walletAddress.publicKey)
+      ? (await getAtaForMint(candyMachine.state.tokenMint, walletAddress.publicKey))[0]
       : walletAddress.publicKey;
 
     const candyMachineAddress = candyMachine.id;
     const remainingAccounts = [];
     const signers = [mint];
-    const cleanupInstructions = [];
 
     const instructions = [
       web3.SystemProgram.createAccount({
