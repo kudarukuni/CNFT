@@ -312,19 +312,14 @@ const CandyMachine = ({ walletAddress }) => {
   };
 
   return (
-    candyMachine &&
-    candyMachine.state && (
+    // Only show this if machineStats is available
+    candyMachine && (
       <div className="machine-container">
-        {renderDropTimer()}
+        <p>{`Drop Date: ${candyMachine.state.goLiveDateTimeString}`}</p>
         <p>{`Items Minted: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
-        {/* Check to see if these properties are equal! */}
-        {candyMachine.state.itemsRedeemed === candyMachine.state.itemsAvailable ? (
-          <p className="sub-text">Sold Out 🙊</p>
-        ) : (
-          <button className="cta-button mint-button" onClick={mintToken}>
+        <button className="cta-button mint-button" onClick={null}>
             Mint NFT
-          </button>
-        )}
+        </button>
       </div>
     )
   );
