@@ -6,6 +6,7 @@ import {
   TOKEN_PROGRAM_ID,
   createMintToInstruction,
   getAssociatedTokenAddress,
+  getAtaForMint,
   createInitializeMintInstruction,
   createAssociatedTokenAccountInstruction,
 } from "@solana/spl-token";
