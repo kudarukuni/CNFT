@@ -8,6 +8,7 @@ import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react
 import "../styles/App.css";
 import "../styles/globals.css";
 import "../styles/CandyMachine.css";
+import "../styles/CountdownTimer.css";
 import "@solana/wallet-adapter-react-ui/styles.css";
 
 const App = ({ Component, pageProps }) => {
