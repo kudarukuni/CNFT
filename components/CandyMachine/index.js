@@ -6,13 +6,12 @@ import {
   TOKEN_PROGRAM_ID,
   createMintToInstruction,
   getAssociatedTokenAddress,
-  getAtaForMint,
   createInitializeMintInstruction,
   createAssociatedTokenAccountInstruction,
 } from "@solana/spl-token";
 import CountdownTimer from "../CountdownTimer";
 import { sendTransactions } from "./connection";
-import { candyMachineProgram, TOKEN_METADATA_PROGRAM_ID, getNetworkExpire, getNetworkToken, CIVIC } from "./helpers";
+import { candyMachineProgram, TOKEN_METADATA_PROGRAM_ID, getAtaForMint, getNetworkExpire, getNetworkToken, CIVIC } from "./helpers";
 
 const { SystemProgram } = web3;
 const opts = {
