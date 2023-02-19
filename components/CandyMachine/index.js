@@ -3,7 +3,7 @@ import { Connection, PublicKey } from "@solana/web3.js";
 import { Program, AnchorProvider, web3 } from "@project-serum/anchor";
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from "@solana/spl-token";
 import { sendTransactions } from "./connection";
-import "..styles/CandyMachine.css";
+import "../styles/CandyMachine.css";
 import { candyMachineProgram, TOKEN_METADATA_PROGRAM_ID, SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID, getAtaForMint, getNetworkExpire, getNetworkToken, CIVIC, } from "./helpers";
 
 const { SystemProgram } = web3;
