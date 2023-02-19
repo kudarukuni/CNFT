@@ -13,7 +13,7 @@ const WalletMultiButtonDynamic = dynamic(
 const TWITTER_HANDLE = "_buildspace";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
-cconst Home = () => {
+const Home = () => {
     const wallet = useWallet();
     // Actions
     const renderNotConnectedContainer = () => (
