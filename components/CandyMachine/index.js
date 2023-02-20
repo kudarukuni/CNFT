@@ -258,7 +258,7 @@ const CandyMachine = ({ walletAddress }) => {
           candyMachine.data.whitelistMintSettings &&
           candyMachine.data.whitelistMintSettings.presale &&
           (!candyMachine.data.goLiveDate || candyMachine.data.goLiveDate.toNumber() > new Date().getTime() / 1000);
-        const goLiveDateTimeString = `${new Date(goLiveData * 1000).toGMTString()}`;
+        const goLiveDateTimeString = `${new Date(goLiveData * 1000).toLocaleDateString()} @ ${new Date(goLiveData * 1000).toLocaleTimeString()}`;
         setCandyMachine({
           id: process.env.NEXT_PUBLIC_CANDY_MACHINE_ID,
           program,
@@ -293,6 +293,7 @@ const CandyMachine = ({ walletAddress }) => {
           itemsRemaining,
           goLiveData,
           goLiveDateTimeString,
+          presale,
         });
     };
     const renderDropTimer = () => {
@@ -310,9 +311,7 @@ const CandyMachine = ({ walletAddress }) => {
         <div className="machine-container">
           <p>{`Drop Date: ${candyMachine.state.goLiveDateTimeString}`}</p>
           <p>{`Items Minted: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
-          <button className="cta-button mint-button" onClick={mintToken}>
-              Mint NFT
-          </button>
+          <button className="cta-button mint-button" onClick={mintToken}>Mint NFT</button>
         </div>
       )
     );
