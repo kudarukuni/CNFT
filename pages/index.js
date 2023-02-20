@@ -9,15 +9,15 @@ const WalletMultiButtonDynamic = dynamic(
 );
 
 // Constants
-const TWITTER_HANDLE = "_buildspace";
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+const TWITTER_HANDLE = "Naswillow";
+const TWITTER_LINK = `https://twitter.com/kudarukuni`;
 
 const Home = () => {
   const wallet = useWallet();
   // Actions
   const renderNotConnectedContainer = () => (
     <div>
-      <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
+      <img src="https://media.giphy.com/media/h5NLPVn3rg0Rq/giphy.gif" alt="emoji" />
 
       <div className="button-container">
         <WalletMultiButtonDynamic className="cta-button connect-wallet-button" />
@@ -29,8 +29,8 @@ const Home = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header">🍭 Candy Drop</p>
-          <p className="sub-text">NFT drop machine with fair mint</p>
+          <p className="header">👻 Chipoko Chadonha 👻</p>
+          <p className="sub-text">The Much Anticipated Chipoko NFT Candy Machine With Fair Mint</p>
           {/* Render your connect to wallet button right here */}
           {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
         </div>
@@ -41,7 +41,7 @@ const Home = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`Designed & Developed By on @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
