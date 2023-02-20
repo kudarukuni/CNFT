@@ -59,7 +59,8 @@ const CandyMachine = ({ walletAddress }) => {
     const candyMachineAddress = candyMachine.id;
     const remainingAccounts = [];
     const signers = [mint];
-
+    const cleanupInstructions = [];
+    
     const instructions = [
       web3.SystemProgram.createAccount({
         fromPubkey: walletAddress.publicKey,
