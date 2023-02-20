@@ -3,7 +3,6 @@ import { Connection, PublicKey } from "@solana/web3.js";
 import { Program, AnchorProvider, web3 } from "@project-serum/anchor";
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from "@solana/spl-token";
 import { sendTransactions } from "./connection";
-import "./CandyMachine.css";
 import {
     candyMachineProgram,
     TOKEN_METADATA_PROGRAM_ID,
