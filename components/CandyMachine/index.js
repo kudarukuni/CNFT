@@ -1,17 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Connection, PublicKey } from "@solana/web3.js";
 import { Program, AnchorProvider, web3 } from "@project-serum/anchor";
-import { MintLayout, TOKEN_PROGRAM_ID, Token } from "@solana/spl-token";
+import { MintLayout, TOKEN_PROGRAM_ID, createMintToInstruction, getAssociatedTokenAddress, createInitializeMintInstruction, createAssociatedTokenAccountInstruction, } from "@solana/spl-token";
+import CountdownTimer from "../CountdownTimer";
 import { sendTransactions } from "./connection";
-import {
-    candyMachineProgram,
-    TOKEN_METADATA_PROGRAM_ID,
-    SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID,
-    getAtaForMint,
-    getNetworkExpire,
-    getNetworkToken,
-    CIVIC,
-} from "./helpers";
+import { candyMachineProgram, TOKEN_METADATA_PROGRAM_ID, getNetworkExpire, getAtaForMint, getNetworkToken, CIVIC } from "./helpers";
 
 const { SystemProgram } = web3;
 const opts = {
@@ -19,6 +12,7 @@ const opts = {
 };
 
 const CandyMachine = ({ walletAddress }) => {
+    const [candyMachine, setCandyMachine] = useState(null);
     const getCandyMachineCreator = async (candyMachine) => {
         const candyMachineID = new PublicKey(candyMachine);
         return await web3.PublicKey.findProgramAddress([Buffer.from("candy_machine"), candyMachineID.toBuffer()], candyMachineProgram);
